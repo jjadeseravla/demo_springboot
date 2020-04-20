@@ -3,10 +3,9 @@ package com.jade.demo.controller;
 import com.jade.demo.model.Student;
 import com.jade.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
 import java.util.List;
 
 @RestController
@@ -23,6 +22,11 @@ public class StudentController {
     @GetMapping//says that this method will be used by a client
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
+    }
+
+    @PostMapping
+    public void insertNewStudent(@RequestBody Student student) {
+        studentService.persistNewStudent(UUID.randomUUID(), student);
     }
 
 }
