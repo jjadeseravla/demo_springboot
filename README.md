@@ -1,2 +1,4 @@
 # Demo for Springboot
-StudentService talks to StudentDao which talks to FakeStudentDaoImplementation
+Controller --> StudentService --> StudentDao --> FakeStudentDaoImplementation
+
+controller hits the service hits the DAO
