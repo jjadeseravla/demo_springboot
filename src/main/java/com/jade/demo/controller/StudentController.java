@@ -24,6 +24,11 @@ public class StudentController {
         return studentService.getAllStudents();
     }
 
+    @GetMapping(path="{studentId}")
+    public Student getStudentById(@PathVariable("studentId") UUID studentId) {
+        return studentService.getStudentById(studentId);
+    }
+
     @PostMapping
     public void insertNewStudent(@RequestBody Student student) {
         studentService.persistNewStudent(UUID.randomUUID(), student);
