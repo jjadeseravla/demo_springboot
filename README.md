@@ -12,3 +12,5 @@ Navigate to target folder:
 ```cd target```</br>
 Run app from the command line:
 ```java -jar demo-0.0.1-SNAPSHOT.jar```</br>
+The front end displays "Hello, world!" and can be seen once the server is
+started and you navigate to ```localhost:9999```</br>
