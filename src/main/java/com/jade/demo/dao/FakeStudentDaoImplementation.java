@@ -1,14 +1,21 @@
 package com.jade.demo.dao;
 
 import com.jade.demo.model.Student;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-public class StudentFakeDaoImplementation implements StudentDao {
+//@Component creates an instance of FakeStudentDaoImplementation
+//but @Component can be used everywhere.  But spring allows us to distinguish
+//between the classes we have...EG @repository:
+@Repository("fakeDao") //gives an instance of FakeStudentDaoImplementation class
+//so we can inject it.  we distinguish between multiple implementation of the class by
+//passing a value, eg. "fakeDao" for that instance
+public class FakeStudentDaoImplementation implements StudentDao {
 
     private final Map<UUID, Student> db;
 
-    public StudentFakeDaoImplementation() {
+    public FakeStudentDaoImplementation() {
         db = new HashMap<>();
     }
 
