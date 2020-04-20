@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public interface StudentDao {
 
-    void insertNewStudent(UUID studentId, Student student);
+    int insertNewStudent(UUID studentId, Student student);
 
     Student selectStudentById(UUID studentId);
 
