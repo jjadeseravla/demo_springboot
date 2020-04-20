@@ -21,6 +21,7 @@ public class StudentService {
     public StudentService(@Qualifier("fakeDao") StudentDao studentDao) {
         this.studentDao = studentDao;
     }
+    //need to change qualifier to "mongoDBDao" if want to use that implementation
 
     public int persistNewStudent(UUID studentId, Student student) {
         UUID studentUUID = studentId == null ? UUID.randomUUID() : studentId;
