@@ -34,4 +34,15 @@ public class StudentController {
         studentService.persistNewStudent(UUID.randomUUID(), student);
     }
 
+    @PutMapping(path="{studentId}")
+    public void updateStudent(@PathVariable("studentId") UUID studentId, @RequestBody Student newStudent) {
+        studentService.updateStudentById(studentId, newStudent);
+    }
+
+    @DeleteMapping(path="{studentId}")
+    public void deleteStudent(@PathVariable("studentId") UUID studentId) {
+        studentService.deleteStudentById(studentId);
+    }
+
+
 }
